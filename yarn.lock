@@ -528,6 +528,7 @@ __metadata:
   resolution: "@tw/core@workspace:packages/core"
   dependencies:
     "@vitest/coverage-v8": "npm:5.0.2"
+    mitt: "npm:3.0.1"
     zod: "npm:^4.6.5"
   languageName: unknown
   linkType: soft
@@ -1355,6 +1356,13 @@ __metadata:
   dependencies:
     minipass: "npm:^7.1.2"
   checksum: 10c0/5aad75ab0090b8266069c9aabe582c021ae53eb33c6c691054a13a45db3b4f91a7fb1bd79151e6b4e9e9a86727b522527c0a06ec7d45206b745d54cd3097bcec
+  languageName: node
+  linkType: hard
+
+"mitt@npm:3.0.1":
+  version: 3.0.1
+  resolution: "mitt@npm:3.0.1"
+  checksum: 10c0/3ab4fdecf3be8c5255536faa07064d05caa3dd332bd318ff02e04621f7b3069ca1de9106cfe8e7ced675abfc2bec2ce4c4ef321c4a1bb1fb29df8ae090741913
   languageName: node
   linkType: hard
 
