@@ -6,6 +6,7 @@
  * их через useQuery с ключами из query-keys.ts.
  */
 
+export type { Inventory } from "@tw/core";
 export {
   closeDay,
   emptyDay,

@@ -1,0 +1,26 @@
+@layer app-components {
+  .exercise {
+    display: grid;
+    gap: var(--space-md);
+    justify-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .progress {
+    display: grid;
+    place-items: center;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+  }
+
+  .support {
+    margin: 0;
+    color: var(--mist);
+  }
+}

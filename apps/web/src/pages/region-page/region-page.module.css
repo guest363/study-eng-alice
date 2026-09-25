@@ -1,0 +1,86 @@
+@layer app-components {
+  .page {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 880px;
+    margin-inline: auto;
+    padding: var(--space-md);
+  }
+
+  .back {
+    justify-self: start;
+    min-height: var(--hit-min);
+    padding: 0 var(--space-md);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--mist);
+    cursor: pointer;
+  }
+
+  .hero {
+    display: grid;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+  }
+
+  .title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+  }
+
+  .story {
+    margin: 0;
+    color: var(--mist);
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .resin {
+    flex: 1 1 220px;
+  }
+
+  .mentor {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .portrait {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-inner);
+    object-fit: cover;
+  }
+
+  .mentorName {
+    margin: 0.2rem 0 0;
+    color: var(--gilt);
+  }
+
+  .mentorRole {
+    margin: 0;
+    color: var(--mist);
+  }
+
+  .quests,
+  .words {
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .wordList {
+    display: grid;
+    gap: var(--space-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}

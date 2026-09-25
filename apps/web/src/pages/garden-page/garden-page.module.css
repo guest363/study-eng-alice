@@ -1,0 +1,51 @@
+@layer app-components {
+  .page {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 720px;
+    margin-inline: auto;
+    padding: var(--space-md);
+  }
+
+  .back {
+    justify-self: start;
+    min-height: var(--hit-min);
+    padding: 0 var(--space-md);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--mist);
+    cursor: pointer;
+  }
+
+  .panel {
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .garden {
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .plants {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: var(--space-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .day {
+    margin: 0;
+    color: var(--mist);
+    font-size: 0.8rem;
+  }
+}

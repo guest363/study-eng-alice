@@ -1,0 +1,86 @@
+@layer app-components {
+  .exercise {
+    display: grid;
+    gap: var(--space-md);
+    justify-items: center;
+    text-align: center;
+  }
+
+  .prompt {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-sm);
+  }
+
+  .speaker {
+    font-size: 1.6rem;
+  }
+
+  .hint {
+    margin: 0;
+    color: var(--mist);
+  }
+
+  .options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-md);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .option {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-xs);
+    width: 100%;
+    min-height: 132px;
+    padding: var(--space-md);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-shell);
+    background: linear-gradient(180deg, rgb(255 255 255 / 4%), rgb(255 255 255 / 1%)), var(--panel);
+    color: var(--moon);
+    cursor: pointer;
+    transition:
+      transform 0.25s var(--ease),
+      border-color 0.25s var(--ease);
+  }
+
+  .option:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: var(--gilt);
+  }
+
+  .option:disabled {
+    cursor: default;
+  }
+
+  .correct {
+    border-color: var(--dendro);
+    box-shadow: 0 0 0 2px rgb(165 224 90 / 25%);
+  }
+
+  .optionImage {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: var(--radius-inner);
+  }
+
+  .optionEmoji {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .optionLabel {
+    color: var(--mist);
+    font-size: 0.85rem;
+  }
+
+  .support {
+    margin: 0;
+    color: var(--gilt);
+  }
+}

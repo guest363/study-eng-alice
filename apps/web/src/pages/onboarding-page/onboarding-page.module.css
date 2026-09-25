@@ -1,0 +1,98 @@
+@layer app-components {
+  .page {
+    display: grid;
+    place-items: center;
+    min-height: 70dvh;
+    padding: var(--space-md);
+  }
+
+  .card {
+    display: grid;
+    gap: var(--space-md);
+    width: min(560px, 100%);
+    padding: var(--space-lg);
+  }
+
+  .title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+  }
+
+  .form {
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .field {
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .label {
+    color: var(--gilt);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .input {
+    min-height: var(--hit-min);
+    padding: 0 var(--space-md);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-inner);
+    background: var(--panel-inner);
+    color: var(--moon);
+  }
+
+  .fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .elements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-xs);
+  }
+
+  .element {
+    min-height: var(--hit-min);
+    padding: 0 var(--space-md);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    background: var(--panel-inner);
+    color: var(--moon);
+    cursor: pointer;
+  }
+
+  .element[data-active="true"] {
+    border-color: var(--gilt);
+    color: var(--gilt);
+  }
+
+  .checkbox {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-start;
+    color: var(--mist);
+  }
+
+  .checkbox input {
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+  }
+
+  .error {
+    color: var(--danger, #d9786a);
+    font-size: 0.9rem;
+  }
+
+  .saved {
+    margin: 0;
+    color: var(--gilt);
+  }
+}

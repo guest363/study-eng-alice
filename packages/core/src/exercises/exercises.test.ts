@@ -171,11 +171,14 @@ describe("проверка ответа по типам упражнений", (
     expect(checkAnswer(letters, ["k", "o", "o", "b"], wordsById).correct).toBe(false);
   });
 
-  it("quick-match: порядок картинок должен совпасть с порядком слов", () => {
+  it("quick-match: каждая картинка должна достаться своему слову", () => {
     const match: Exercise = { type: "quick-match", wordIds: [book.id, apple.id, plain.id] };
-    expect(checkAnswer(match, `${book.id},${apple.id},${plain.id}`).correct).toBe(true);
-    expect(checkAnswer(match, `${apple.id},${book.id},${plain.id}`).correct).toBe(false);
-    expect(checkAnswer(match, `${book.id},${apple.id}`).resolved).toBe(false);
+    const good = `${book.id}:${book.id},${apple.id}:${apple.id},${plain.id}:${plain.id}`;
+    const swapped = `${book.id}:${apple.id},${apple.id}:${book.id},${plain.id}:${plain.id}`;
+    const short = `${book.id}:${book.id},${apple.id}:${apple.id}`;
+    expect(checkAnswer(match, good).correct).toBe(true);
+    expect(checkAnswer(match, swapped).correct).toBe(false);
+    expect(checkAnswer(match, short).correct).toBe(false);
   });
 
   it("build-phrase без каталога не «засчитывается молча»", () => {

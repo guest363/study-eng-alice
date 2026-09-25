@@ -1,0 +1,48 @@
+@layer app-components {
+  .page {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 560px;
+    margin-inline: auto;
+    padding: var(--space-md);
+  }
+
+  .lock {
+    display: grid;
+    gap: var(--space-md);
+    justify-items: start;
+    padding: var(--space-lg);
+  }
+
+  .hint {
+    margin: 0;
+    color: var(--mist);
+  }
+
+  .example {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+  }
+
+  .input {
+    min-width: 8ch;
+    min-height: var(--hit-min);
+    padding: 0 var(--space-md);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-inner);
+    background: var(--panel-inner);
+    color: var(--moon);
+  }
+
+  .back {
+    justify-self: start;
+    min-height: var(--hit-min);
+    padding: 0 var(--space-md);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--mist);
+    cursor: pointer;
+  }
+}

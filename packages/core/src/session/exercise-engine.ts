@@ -74,6 +74,19 @@ export const createExerciseRun = (items: readonly Exercise[], idPrefix: string):
 
 export const isRunFinished = (run: ExerciseRun): boolean => run.index >= run.items.length;
 
+/** Состояние текущего упражнения: что показывать интерфейсу прямо сейчас. */
+export type CurrentState = Readonly<{
+  status: "asking" | "resolved";
+  hintsUsed: number;
+  answerShown: boolean;
+}>;
+
+export const currentState = (run: ExerciseRun): CurrentState => ({
+  status: run.status,
+  hintsUsed: run.hintsUsed,
+  answerShown: run.answerShown,
+});
+
 const resolve = (run: ExerciseRun, result: ItemResult): ExerciseRun => {
   const results = [...run.results];
   results[run.index] = result;

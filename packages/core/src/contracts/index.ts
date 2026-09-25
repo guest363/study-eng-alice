@@ -43,6 +43,7 @@ export {
   reactionSchema,
 } from "./reaction";
 export { type Region, regionSchema } from "./region";
+export { type Scene, sceneSchema } from "./scene";
 export { type Settings, settingsSchema } from "./settings";
 export { type Labels, labelsSchema, srsGradeLabelKeys } from "./ui";
 export {

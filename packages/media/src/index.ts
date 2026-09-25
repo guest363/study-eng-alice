@@ -12,6 +12,14 @@ export {
   createAudioBus,
 } from "./audio-bus";
 export {
+  createVoiceRecorder,
+  type RecorderEngine,
+  type RecorderOptions,
+  type RecorderSnapshot,
+  type RecorderState,
+  type VoiceRecorder,
+} from "./recorder";
+export {
   type AudioPlayer,
   createSfxPlayer,
   SFX_NAMES,

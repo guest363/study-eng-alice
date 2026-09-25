@@ -1,0 +1,73 @@
+@layer app-components {
+  .panel {
+    display: grid;
+    gap: var(--space-md);
+    justify-items: center;
+  }
+
+  .cards {
+    display: grid;
+    gap: var(--space-sm);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-inner);
+    background: var(--panel-inner);
+  }
+
+  .number {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-pill);
+    background: var(--panel);
+    color: var(--gilt);
+    font-size: 0.85rem;
+  }
+
+  .caption {
+    color: var(--moon);
+    text-align: left;
+  }
+
+  .swap {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  .move {
+    min-width: var(--hit-min);
+    min-height: var(--hit-min);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    background: var(--panel);
+    color: var(--moon);
+    cursor: pointer;
+  }
+
+  .move:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  .almost {
+    margin: 0;
+    color: var(--mist);
+  }
+
+  .done {
+    margin: 0;
+    color: var(--gilt);
+  }
+}

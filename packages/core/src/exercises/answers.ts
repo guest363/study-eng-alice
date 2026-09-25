@@ -78,11 +78,11 @@ const checkOne = (
       return { resolved: true, correct, grade: null };
     }
     case "quick-match":
-      // UI присылает id слов в порядке показанных картинок; верно — исходный порядок.
-      if (typeof answer !== "string" || !isPairedCorrect(exercise.wordIds, answer)) {
-        return UNRESOLVED;
-      }
-      return { resolved: true, correct: true, grade: null };
+      // UI присылает пары «id слова:id картинки» через запятую. Верно, когда каждая
+      // картинка досталась своему слову — ребёнок соединяет в любом порядке.
+      return typeof answer === "string"
+        ? { resolved: true, correct: isPairedCorrect(exercise.wordIds, answer), grade: null }
+        : UNRESOLVED;
     case "garden-water":
       return isGardenGrade(answer) ? { resolved: true, correct: true, grade: answer } : UNRESOLVED;
     case "read-freeze": {
@@ -102,8 +102,15 @@ const checkOne = (
 };
 
 const isPairedCorrect = (wordIds: readonly string[], answer: string): boolean => {
-  const given = answer.split(",").filter((part) => part.length > 0);
-  return given.length === wordIds.length && given.every((id, index) => id === wordIds[index]);
+  const pairs = answer
+    .split(",")
+    .map((pair) => pair.split(":"))
+    .filter((pair) => pair.length === 2);
+  if (pairs.length !== wordIds.length) {
+    return false;
+  }
+  const used = new Set(pairs.map(([wordId]) => wordId));
+  return used.size === wordIds.length && pairs.every(([wordId, imageId]) => wordId === imageId);
 };
 
 /** Проверка ответа по типу упражнения. */

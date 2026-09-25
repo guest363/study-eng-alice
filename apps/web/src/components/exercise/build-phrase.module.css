@@ -1,0 +1,83 @@
+@layer app-components {
+  .exercise {
+    display: grid;
+    gap: var(--space-md);
+    justify-items: center;
+    width: 100%;
+  }
+
+  .hint {
+    margin: 0;
+    color: var(--mist);
+    text-align: center;
+  }
+
+  .result {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    min-height: var(--hit-min);
+    padding: var(--space-sm) var(--space-md);
+    border: 1px dashed var(--line);
+    border-radius: var(--radius-inner);
+    background: var(--panel-inner);
+  }
+
+  .phrase {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--frost);
+  }
+
+  .speaker {
+    font-size: 1.2rem;
+  }
+
+  .blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .block {
+    /* touch-action: none обязателен, иначе скролл телефона съедает перетаскивание. */
+    touch-action: none;
+  }
+
+  .blockButton {
+    min-width: 96px;
+    min-height: var(--hit-min);
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--gilt-dim);
+    border-radius: var(--radius-pill);
+    background: linear-gradient(180deg, rgb(255 255 255 / 6%), rgb(255 255 255 / 1%)), var(--panel);
+    color: var(--moon);
+    font-size: 1rem;
+    cursor: grab;
+    touch-action: none;
+  }
+
+  .blockButton:active {
+    cursor: grabbing;
+  }
+
+  .dragging {
+    z-index: 2;
+  }
+
+  .dragging .blockButton {
+    border-color: var(--gilt);
+    box-shadow: 0 0 0 2px rgb(212 181 106 / 25%);
+  }
+
+  .shown {
+    margin: 0;
+    color: var(--gilt);
+    text-align: center;
+  }
+}

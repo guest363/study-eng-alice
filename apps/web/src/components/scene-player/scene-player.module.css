@@ -1,0 +1,6 @@
+@layer app-components {
+  .scene {
+    position: relative;
+    overflow: hidden;
+  }
+}

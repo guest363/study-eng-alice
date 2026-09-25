@@ -1,43 +1,51 @@
 @layer app-components {
   .page {
-    width: min(1180px, calc(100% - 1.5rem));
-    margin: 0 auto;
-    padding: var(--space-xl) 0 var(--space-xl);
+    display: grid;
+    gap: var(--space-lg);
+    max-width: 960px;
+    margin-inline: auto;
+    padding: var(--space-md);
   }
 
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  .top {
+    display: grid;
     gap: var(--space-md);
-    padding: var(--space-xl);
   }
 
-  .title {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 4.5vw, 2.6rem);
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-  }
-
-  .lead {
-    margin: 0;
-    max-width: 46rem;
-    color: var(--mist);
-  }
-
-  .actions {
+  .stats {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: var(--space-sm);
-    margin-top: var(--space-sm);
   }
 
-  @media (max-width: 640px) {
-    .hero {
-      padding: var(--space-lg);
-      border-radius: var(--radius-inner);
-    }
+  .resin {
+    flex: 1 1 240px;
+  }
+
+  .map {
+    display: grid;
+    place-items: center;
+  }
+
+  .tasks {
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .taskWords {
+    margin: var(--space-xs) 0 0;
+    color: var(--mist);
+    font-size: 0.85rem;
+  }
+
+  .hint {
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .hintText {
+    margin: 0;
+    color: var(--mist);
   }
 }

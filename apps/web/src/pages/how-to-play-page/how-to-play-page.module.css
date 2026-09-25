@@ -1,0 +1,24 @@
+@layer app-components {
+  .page {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 640px;
+    margin-inline: auto;
+    padding: var(--space-md);
+  }
+
+  .card {
+    display: grid;
+    gap: var(--space-md);
+    justify-items: start;
+    padding: var(--space-lg);
+  }
+
+  .list {
+    display: grid;
+    gap: var(--space-sm);
+    margin: 0;
+    padding-left: 1.2em;
+    color: var(--mist);
+  }
+}
