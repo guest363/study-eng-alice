@@ -1,0 +1,11 @@
+pre-commit:
+  commands:
+    biome:
+      glob: "*.{ts,tsx,css,json}"
+      run: yarn biome check --write {staged_files}
+      stage_fixed: true
+
+pre-push:
+  commands:
+    verify:
+      run: yarn turbo run typecheck test

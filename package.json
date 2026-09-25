@@ -1,0 +1,31 @@
+{
+  "name": "teyvat-words",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "yarn@4.18.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=@tw/web",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "test": "turbo run test",
+    "content:validate": "turbo run content:validate"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "lefthook": "^2.1.14",
+    "turbo": "^2.11.4",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2"
+  }
+}

@@ -1,0 +1,8 @@
+@layer ui-components {
+  .panel {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-shell);
+    background: linear-gradient(180deg, rgb(255 255 255 / 4%), rgb(255 255 255 / 1%)), var(--panel);
+    box-shadow: var(--shadow-card);
+  }
+}

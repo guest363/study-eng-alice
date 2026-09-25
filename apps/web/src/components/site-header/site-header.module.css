@@ -1,0 +1,102 @@
+@layer app-components {
+  .shell {
+    position: sticky;
+    top: 0.55rem;
+    z-index: 10;
+    width: min(1180px, calc(100% - 1.5rem));
+    margin: 0.55rem auto 0;
+    padding: 0.7rem var(--space-lg) 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    background: rgb(8 12 22 / 84%);
+    backdrop-filter: blur(10px);
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .title {
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    color: var(--mist);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .sparks {
+    color: var(--gilt);
+    font-weight: 600;
+  }
+
+  .elements {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding-top: 0.5rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-pill);
+    background: var(--dot, var(--mist));
+    box-shadow: 0 0 8px var(--dot, transparent);
+  }
+
+  .pyro {
+    --dot: var(--pyro);
+  }
+
+  .hydro {
+    --dot: var(--hydro);
+  }
+
+  .anemo {
+    --dot: var(--anemo);
+  }
+
+  .geo {
+    --dot: var(--geo);
+  }
+
+  .electro {
+    --dot: var(--electro);
+  }
+
+  .dendro {
+    --dot: var(--dendro);
+  }
+
+  .cryo {
+    --dot: var(--cryo);
+  }
+
+  @media (max-width: 480px) {
+    .words {
+      display: none;
+    }
+
+    .title {
+      font-size: 0.88rem;
+    }
+  }
+}

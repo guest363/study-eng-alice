@@ -1,0 +1,9 @@
+@layer ui-components {
+  .kicker {
+    color: var(--gilt);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+}
