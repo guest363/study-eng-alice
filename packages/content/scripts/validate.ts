@@ -7,7 +7,7 @@
  */
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
-import type { Companion, PaimonBank, Quest, Reaction, Region, Word } from "@tw/core";
+import type { Companion, Labels, PaimonBank, Quest, Reaction, Region, Word } from "@tw/core";
 import { type CatalogParts, findCatalogProblems } from "../src/checks";
 import { parseContentFile } from "../src/load";
 
@@ -27,6 +27,19 @@ const collectFiles = (dir: string): string[] => {
   return files;
 };
 
+/** Заглушка для сбора проблем: до валидации дело не дойдёт. */
+const EMPTY_PAIMON_BANK: PaimonBank = {
+  dayOpen: [],
+  praise: [],
+  almost: [],
+  hint: [],
+  cliffhanger: [],
+  rest: [],
+  garden: [],
+  chest: [],
+  choice: [],
+};
+
 const problems: string[] = [];
 const regions: Region[] = [];
 const words: Word[] = [];
@@ -34,6 +47,7 @@ const quests: Quest[] = [];
 const companions: Companion[] = [];
 const reactions: Reaction[] = [];
 let paimonBank: PaimonBank | null = null;
+let labels: Labels | null = null;
 
 const files = collectFiles(srcDir).sort();
 
@@ -65,6 +79,9 @@ for (const file of files) {
       case "paimon-bank":
         paimonBank = parsed.value;
         break;
+      case "labels":
+        labels = parsed.value;
+        break;
       default:
         break;
     }
@@ -79,21 +96,16 @@ const parts: CatalogParts = {
   quests,
   companions,
   reactions,
-  paimonBank:
-    paimonBank ??
-    ({
-      dayOpen: [],
-      praise: [],
-      almost: [],
-      hint: [],
-      cliffhanger: [],
-      rest: [],
-      garden: [],
-      chest: [],
-      choice: [],
-    } as PaimonBank),
+  paimonBank: paimonBank ?? EMPTY_PAIMON_BANK,
 };
 problems.push(...findCatalogProblems(parts));
+
+if (!paimonBank) {
+  problems.push("Не найден paimon/bank.json");
+}
+if (!labels) {
+  problems.push("Не найден ui/labels.json");
+}
 
 for (const region of regions) {
   const regionWords = words.filter((word) => word.regionId === region.id);

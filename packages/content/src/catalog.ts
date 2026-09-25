@@ -1,5 +1,14 @@
 /** Каталог контента: сбор, валидация Zod и перекрёстные проверки при первом обращении. */
-import type { Companion, MediaEntry, PaimonBank, Quest, Reaction, Region, Word } from "@tw/core";
+import type {
+  Companion,
+  Labels,
+  MediaEntry,
+  PaimonBank,
+  Quest,
+  Reaction,
+  Region,
+  Word,
+} from "@tw/core";
 import { findCatalogProblems } from "./checks";
 import { type ParsedFile, parseContentFile } from "./load";
 
@@ -16,9 +25,24 @@ export type Catalog = Readonly<{
   companions: readonly Companion[];
   reactions: readonly Reaction[];
   paimonBank: PaimonBank;
+  /** Подписи кнопок движка: оценки сада и действия упражнений. */
+  labels: Labels;
   /** Слитые манифесты: глобальный + региональные. */
   media: Readonly<Record<string, MediaEntry>>;
 }>;
+
+/** Заглушки нужны только для сбора проблем — до них дело не дойдёт, валидатор упадёт. */
+const EMPTY_PAIMON_BANK: PaimonBank = {
+  dayOpen: [],
+  praise: [],
+  almost: [],
+  hint: [],
+  cliffhanger: [],
+  rest: [],
+  garden: [],
+  chest: [],
+  choice: [],
+};
 
 let cached: Catalog | null = null;
 
@@ -33,6 +57,7 @@ export const loadCatalog = (): Catalog => {
   const companions: Companion[] = [];
   let reactions: Reaction[] = [];
   let paimonBank: PaimonBank | null = null;
+  let labels: Labels | null = null;
   const media: Record<string, MediaEntry> = {};
   const problems: string[] = [];
 
@@ -64,6 +89,9 @@ export const loadCatalog = (): Catalog => {
       case "paimon-bank":
         paimonBank = parsed.value;
         break;
+      case "labels":
+        labels = parsed.value;
+        break;
       case "global-media":
       case "region-media": {
         for (const [mediaKey, entry] of Object.entries(parsed.value)) {
@@ -80,6 +108,9 @@ export const loadCatalog = (): Catalog => {
   if (!paimonBank) {
     problems.push("Не найден paimon/bank.json");
   }
+  if (!labels) {
+    problems.push("Не найден ui/labels.json");
+  }
 
   problems.push(
     ...findCatalogProblems({
@@ -88,17 +119,7 @@ export const loadCatalog = (): Catalog => {
       quests,
       companions,
       reactions,
-      paimonBank: paimonBank ?? {
-        dayOpen: [],
-        praise: [],
-        almost: [],
-        hint: [],
-        cliffhanger: [],
-        rest: [],
-        garden: [],
-        chest: [],
-        choice: [],
-      },
+      paimonBank: paimonBank ?? EMPTY_PAIMON_BANK,
     }),
   );
 
@@ -109,7 +130,7 @@ export const loadCatalog = (): Catalog => {
     }
   }
 
-  if (problems.length > 0) {
+  if (problems.length > 0 || !paimonBank || !labels) {
     throw new Error(`Контент не прошёл проверки:\n- ${problems.join("\n- ")}`);
   }
 
@@ -119,7 +140,8 @@ export const loadCatalog = (): Catalog => {
     quests: Object.freeze(quests),
     companions: Object.freeze(companions),
     reactions: Object.freeze(reactions),
-    paimonBank: paimonBank ?? ({} as PaimonBank),
+    paimonBank,
+    labels,
     media: Object.freeze(media),
   });
   return cached;

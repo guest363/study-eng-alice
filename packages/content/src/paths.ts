@@ -7,6 +7,7 @@ export type ContentFileKind =
   | { kind: "region-media"; regionSlug: string }
   | { kind: "companion" }
   | { kind: "paimon-bank" }
+  | { kind: "labels" }
   | { kind: "reactions" }
   | { kind: "global-media" };
 
@@ -35,6 +36,9 @@ export const classifyPath = (relPath: string): ContentFileKind | null => {
   }
   if (path === "paimon/bank.json") {
     return { kind: "paimon-bank" };
+  }
+  if (path === "ui/labels.json") {
+    return { kind: "labels" };
   }
   if (path === "reactions.json") {
     return { kind: "reactions" };

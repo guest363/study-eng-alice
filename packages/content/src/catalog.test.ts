@@ -31,6 +31,15 @@ describe("каталог контента репозитория", () => {
     expect(catalog.reactions).toHaveLength(5);
   });
 
+  it("содержит подписи кнопок сада и упражнений", () => {
+    expect(Object.keys(catalog.labels.srsGrade).sort()).toEqual([
+      "forgotten",
+      "hinted",
+      "remembered",
+    ]);
+    expect(catalog.labels.actions.said.length).toBeGreaterThan(0);
+  });
+
   it("в регионе есть и комиссия, и архонт-квест", () => {
     const kinds = catalog.quests
       .filter((quest) => quest.regionId === "mondstadt")

@@ -12,3 +12,4 @@ export {
   type ElementMeta,
   SPARKS_PER_TASK,
 } from "./elements";
+export * from "./fsrs/fsrs-lite";

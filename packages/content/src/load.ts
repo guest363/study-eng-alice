@@ -2,6 +2,8 @@
 import {
   type Companion,
   companionSchema,
+  type Labels,
+  labelsSchema,
   type MediaManifest,
   mediaManifestSchema,
   type PaimonBank,
@@ -25,6 +27,7 @@ export type ParsedFile =
   | { kind: "region-media"; regionSlug: string; value: MediaManifest }
   | { kind: "companion"; value: Companion }
   | { kind: "paimon-bank"; value: PaimonBank }
+  | { kind: "labels"; value: Labels }
   | { kind: "reactions"; value: Reaction[] }
   | { kind: "global-media"; value: MediaManifest };
 
@@ -49,6 +52,8 @@ export const parseContentFile = (relPath: string, raw: string): ParsedFile => {
       return { ...kind, value: companionSchema.parse(parseFrontmatter(raw, relPath).data) };
     case "paimon-bank":
       return { ...kind, value: paimonBankSchema.parse(parseJson(raw, relPath)) };
+    case "labels":
+      return { ...kind, value: labelsSchema.parse(parseJson(raw, relPath)) };
     case "reactions":
       return { ...kind, value: reactionListSchema.parse(parseJson(raw, relPath)) };
   }

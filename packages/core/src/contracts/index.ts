@@ -16,6 +16,24 @@ export {
   mediaManifestSchema,
 } from "./media";
 export { type PaimonBank, paimonBankSchema } from "./paimon";
+export {
+  type DayRecord,
+  dayRecordSchema,
+  type Inventory,
+  inventorySchema,
+  type JournalEntry,
+  type JournalType,
+  journalEntrySchema,
+  journalTypeSchema,
+  type SessionRecord,
+  type SessionStatus,
+  type SrsGrade,
+  sessionRecordSchema,
+  sessionStatusSchema,
+  srsGradeSchema,
+  type WordState,
+  wordStateSchema,
+} from "./progress";
 export { type Chest, chestSchema, type Quest, type QuestStep, questSchema } from "./quest";
 export {
   type Reaction,
@@ -26,6 +44,7 @@ export {
 } from "./reaction";
 export { type Region, regionSchema } from "./region";
 export { type Settings, settingsSchema } from "./settings";
+export { type Labels, labelsSchema, srsGradeLabelKeys } from "./ui";
 export {
   type PartOfSpeech,
   partOfSpeechSchema,
