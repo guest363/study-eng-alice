@@ -546,6 +546,8 @@ __metadata:
 "@tw/media@workspace:packages/media":
   version: 0.0.0-use.local
   resolution: "@tw/media@workspace:packages/media"
+  dependencies:
+    "@tw/core": "workspace:*"
   languageName: unknown
   linkType: soft
 
