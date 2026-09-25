@@ -55,6 +55,12 @@
           }
         }
       }
+    },
+    {
+      "includes": ["packages/content/src/**/*.json"],
+      "formatter": {
+        "enabled": false
+      }
     }
   ]
 }

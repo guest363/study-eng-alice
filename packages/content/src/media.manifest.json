@@ -1,0 +1,53 @@
+{
+  "portrait-paimon": {
+    "file": null,
+    "alt": "Паймон",
+    "source": "none"
+  },
+  "icon-paimon": {
+    "file": null,
+    "alt": "Паймон — иконка",
+    "source": "none"
+  },
+  "portrait-noelle": {
+    "file": "media/portrait-noelle.webp",
+    "alt": "Ноэлль",
+    "vibe3": "noelle/Noelle_Portrait",
+    "source": "vibe3"
+  },
+  "icon-noelle": {
+    "file": "media/icon-noelle.webp",
+    "alt": "Ноэлль — иконка",
+    "vibe3": "noelle/UI_AvatarIcon_Noel",
+    "source": "vibe3"
+  },
+  "portrait-amber": {
+    "file": "media/portrait-amber.webp",
+    "alt": "Эмбер",
+    "vibe3": "amber/Amber_Wish",
+    "source": "vibe3"
+  },
+  "icon-amber": {
+    "file": "media/icon-amber.webp",
+    "alt": "Эмбер — иконка",
+    "vibe3": "amber/UI_AvatarIcon_Ambor",
+    "source": "vibe3"
+  },
+  "portrait-venti": {
+    "file": "media/portrait-venti.webp",
+    "alt": "Венти",
+    "vibe3": "venti/Venti_Portrait",
+    "source": "vibe3"
+  },
+  "icon-venti": {
+    "file": "media/icon-venti.webp",
+    "alt": "Венти — иконка",
+    "vibe3": "venti/UI_AvatarIcon_Venti",
+    "source": "vibe3"
+  },
+  "backdrop-mondstadt": {
+    "file": null,
+    "alt": "Мондштадт — фон региона",
+    "source": "none"
+  }
+}

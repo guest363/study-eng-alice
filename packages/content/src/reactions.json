@@ -1,0 +1,7 @@
+[
+  { "id": "vaporize", "nameRu": "Испарение", "from": "hydro", "to": "pyro", "bonus": "xp-x2", "descriptionRu": "Услышала слово — и сразу сказала сама: ×2 опыта за пару." },
+  { "id": "electro-charged", "nameRu": "Заряд", "from": "hydro", "to": "electro", "bonus": "crystals-2", "descriptionRu": "Услышала — и мгновенно собрала пару: +2 кристалла." },
+  { "id": "bloom", "nameRu": "Бутонизация", "from": "hydro", "to": "dendro", "bonus": "interval-plus", "descriptionRu": "Услышала — и полила слово в саду: срок повторения +1 день." },
+  { "id": "crystallize", "nameRu": "Кристаллизация", "from": "geo", "to": "any", "bonus": "star-protect", "descriptionRu": "Собрала фразу — слово из неё под звездой памяти на 7 дней." },
+  { "id": "swirl", "nameRu": "Рассеивание", "from": "anemo", "to": "any", "bonus": "accent-swap", "descriptionRu": "Повторила звук — следующее задание озвучит другой акцент." }
+]

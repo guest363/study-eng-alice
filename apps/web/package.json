@@ -11,6 +11,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
+    "@tw/content": "workspace:*",
     "@tw/core": "workspace:*",
     "@tw/ui": "workspace:*",
     "react": "^19.3.0",
