@@ -1,0 +1,47 @@
+@layer ui-components {
+  .shell {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-sm);
+    min-width: 0;
+  }
+
+  .label {
+    color: var(--gilt);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .track {
+    width: 100%;
+    height: 14px;
+    appearance: none;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    background: var(--panel-inner);
+    overflow: hidden;
+  }
+
+  .track::-webkit-progress-bar {
+    background: var(--panel-inner);
+  }
+
+  .track::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--gilt-dim), var(--gilt));
+    transition: width 0.45s var(--ease);
+  }
+
+  .track::-moz-progress-bar {
+    background: linear-gradient(90deg, var(--gilt-dim), var(--gilt));
+  }
+
+  .count {
+    color: var(--mist);
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,123 @@
+@layer ui-components {
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: grid;
+    place-items: center;
+    padding: var(--space-md);
+    background: rgb(7 11 24 / 78%);
+    backdrop-filter: blur(4px);
+  }
+
+  .chest {
+    width: min(560px, 100%);
+    padding: var(--space-lg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-shell);
+    background: linear-gradient(180deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 1%)), var(--panel);
+    box-shadow: var(--shadow-card);
+    text-align: center;
+  }
+
+  .common {
+    box-shadow:
+      var(--shadow-card),
+      0 0 0 1px var(--gilt-dim);
+  }
+
+  .rich {
+    box-shadow:
+      var(--shadow-card),
+      0 0 0 2px var(--gilt);
+  }
+
+  .precious {
+    box-shadow:
+      var(--shadow-card),
+      0 0 0 2px var(--frost);
+  }
+
+  .opening {
+    animation: chest-shake 0.9s var(--ease);
+  }
+
+  .opened {
+    animation: chest-open 0.4s var(--ease);
+  }
+
+  .title {
+    margin: var(--space-xs) 0 var(--space-md);
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+  }
+
+  .items {
+    display: grid;
+    gap: var(--space-sm);
+    margin: 0 0 var(--space-lg);
+    padding: 0;
+    list-style: none;
+  }
+
+  .item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-inner);
+    background: var(--panel-inner);
+  }
+
+  .itemLabel {
+    color: var(--moon);
+  }
+
+  .itemNote {
+    color: var(--gilt);
+    font-size: 0.9rem;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@keyframes chest-shake {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-6px) rotate(-1.5deg);
+  }
+
+  50% {
+    transform: translateY(2px) rotate(1.5deg);
+  }
+
+  75% {
+    transform: translateY(-3px) rotate(-1deg);
+  }
+}
+
+@keyframes chest-open {
+  from {
+    transform: scale(0.96);
+  }
+
+  to {
+    transform: scale(1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .opening,
+  .opened {
+    animation: none;
+  }
+}

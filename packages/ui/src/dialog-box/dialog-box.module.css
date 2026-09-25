@@ -1,0 +1,101 @@
+@layer ui-components {
+  .shell {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-md);
+    align-items: start;
+    padding: var(--space-md);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-shell);
+    background: linear-gradient(180deg, rgb(255 255 255 / 4%), rgb(255 255 255 / 1%)), var(--panel);
+    box-shadow: var(--shadow-card);
+  }
+
+  .portrait {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-inner);
+    border: 1px solid var(--line);
+    background: var(--panel-inner);
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+
+  .portraitImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .portraitFallback {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--gilt);
+  }
+
+  .pyro {
+    box-shadow: 0 0 0 2px rgb(255 123 74 / 35%);
+  }
+
+  .hydro {
+    box-shadow: 0 0 0 2px rgb(61 166 255 / 35%);
+  }
+
+  .anemo {
+    box-shadow: 0 0 0 2px rgb(115 224 201 / 35%);
+  }
+
+  .geo {
+    box-shadow: 0 0 0 2px rgb(230 193 90 / 35%);
+  }
+
+  .electro {
+    box-shadow: 0 0 0 2px rgb(192 140 255 / 35%);
+  }
+
+  .dendro {
+    box-shadow: 0 0 0 2px rgb(165 224 90 / 35%);
+  }
+
+  .cryo {
+    box-shadow: 0 0 0 2px rgb(159 231 255 / 35%);
+  }
+
+  .body {
+    min-width: 0;
+  }
+
+  .name {
+    margin: 0.15rem 0 0;
+    color: var(--gilt);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .text {
+    margin: 0.35rem 0 0;
+    color: var(--moon);
+  }
+
+  .englishRow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+  }
+
+  .english {
+    color: var(--frost);
+    font-size: 0.95rem;
+  }
+
+  .speak {
+    min-width: var(--hit-min);
+    min-height: var(--hit-min);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    background: var(--panel-inner);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,55 @@
+@layer ui-components {
+  .plant {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: var(--space-xs);
+    min-width: 84px;
+    min-height: var(--hit-min);
+    padding: var(--space-sm);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-inner);
+    background: var(--panel-inner);
+    color: var(--moon);
+    cursor: inherit;
+  }
+
+  button.plant {
+    cursor: pointer;
+    transition: transform 0.25s var(--ease);
+  }
+
+  button.plant:hover {
+    transform: translateY(-2px);
+  }
+
+  .glyph {
+    font-size: 1.9rem;
+    line-height: 1;
+    transition: transform 0.4s var(--ease);
+  }
+
+  .glyph[data-stage="sprout"] {
+    opacity: 0.75;
+  }
+
+  .glyph[data-stage="bud"] {
+    filter: saturate(0.85);
+  }
+
+  .glyph[data-stage="flower"] {
+    filter: drop-shadow(0 0 10px rgb(212 181 106 / 35%));
+  }
+
+  .word {
+    font-size: 0.85rem;
+    color: var(--frost);
+  }
+
+  .star {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    color: var(--gilt);
+  }
+}

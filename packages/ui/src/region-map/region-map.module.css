@@ -1,0 +1,131 @@
+@layer ui-components {
+  .shell {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: min(100%, 560px);
+    aspect-ratio: 320 / 420;
+    margin-inline: auto;
+  }
+
+  .map {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .land {
+    fill: rgb(255 255 255 / 3%);
+    stroke: var(--line);
+    stroke-width: 1.5;
+  }
+
+  .nodes {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .slot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+
+  .node {
+    display: grid;
+    justify-items: center;
+    gap: 0.15rem;
+    min-width: 72px;
+    min-height: var(--hit-min);
+    padding: 0.2rem;
+    border: 0;
+    background: transparent;
+    color: var(--moon);
+    cursor: pointer;
+  }
+
+  .node:disabled {
+    cursor: default;
+  }
+
+  .disc {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 2px solid var(--accent, var(--gilt));
+    border-radius: var(--radius-pill);
+    background: var(--panel-inner);
+    color: var(--accent, var(--gilt));
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    transition: transform 0.25s var(--ease);
+  }
+
+  .caption {
+    max-width: 96px;
+    color: var(--mist);
+    font-size: 0.68rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .locked .disc {
+    border-color: rgb(154 168 194 / 35%);
+    color: var(--mist);
+  }
+
+  .locked .caption {
+    opacity: 0.7;
+  }
+
+  .node:hover:not(:disabled) .disc {
+    transform: translateY(-2px);
+  }
+
+  .progress {
+    width: 46px;
+    height: 4px;
+    border-radius: var(--radius-pill);
+    background: var(--panel-inner);
+    overflow: hidden;
+  }
+
+  .progressFill {
+    display: block;
+    height: 100%;
+    background: var(--gilt);
+    transition: width 0.45s var(--ease);
+  }
+
+  .pyro {
+    --accent: var(--pyro);
+  }
+
+  .hydro {
+    --accent: var(--hydro);
+  }
+
+  .anemo {
+    --accent: var(--anemo);
+  }
+
+  .geo {
+    --accent: var(--geo);
+  }
+
+  .electro {
+    --accent: var(--electro);
+  }
+
+  .dendro {
+    --accent: var(--dendro);
+  }
+
+  .cryo {
+    --accent: var(--cryo);
+  }
+}

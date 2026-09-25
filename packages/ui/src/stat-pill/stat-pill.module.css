@@ -1,0 +1,36 @@
+@layer ui-components {
+  .pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--space-xs);
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    background: var(--panel-inner);
+    white-space: nowrap;
+  }
+
+  .label {
+    color: var(--mist);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .value {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+  }
+
+  .gilt .value {
+    color: var(--gilt);
+  }
+
+  .frost .value {
+    color: var(--frost);
+  }
+
+  .mist .value {
+    color: var(--moon);
+  }
+}
